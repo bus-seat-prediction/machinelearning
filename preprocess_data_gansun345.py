@@ -6,28 +6,28 @@ import pandas as pd
 
 
 #이거 필요없을듯?
-bus_num =[100, 101, 102, 103, 104, 105, 106, 107, 109, 110, 110, 111, 120, 121, 130, 140, 141, 142, 143, 144, 145, 146, 147, 148, 150, 151, 152, 153, 160, 162, 171, 172, 173, 201, 202, 240, 241, 242, 260, 261, 262, 270, 271, 272, 273]
+# bus_num =[100, 101, 102, 103, 104, 105, 106, 107, 109, 110, 110, 111, 120, 121, 130, 140, 141, 142, 143, 144, 145, 146, 147, 148, 150, 151, 152, 153, 160, 162, 171, 172, 173, 201, 202, 240, 241, 242, 260, 261, 262, 270, 271, 272, 273]
 
-data_1 = pd.read_csv('./data/gansun/1_2/노선·정류장 지표(노선별 차내 재차인원)_20220302.csv')
-data_2 = pd.read_csv('./data/gansun/1_2/노선·정류장 지표(노선별 차내 재차인원)_20220303.csv')
-data_3 = pd.read_csv('./data/gansun/1_2/노선·정류장 지표(노선별 차내 재차인원)_20220304.csv')
-data_4 = pd.read_csv('./data/gansun/1_2/노선·정류장 지표(노선별 차내 재차인원)_20220305.csv')
-data_5 = pd.read_csv('./data/gansun/1_2/노선·정류장 지표(노선별 차내 재차인원)_20220306.csv')
-data_6 = pd.read_csv('./data/gansun/1_2/노선·정류장 지표(노선별 차내 재차인원)_20220307.csv')
-data_7 = pd.read_csv('./data/gansun/1_2/노선·정류장 지표(노선별 차내 재차인원)_20220308.csv')
-data_8 = pd.read_csv('./data/gansun/1_2/노선·정류장 지표(노선별 차내 재차인원)_20220309.csv')
-data_9 = pd.read_csv('./data/gansun/1_2/노선·정류장 지표(노선별 차내 재차인원)_20220310.csv')
-data_10 = pd.read_csv('./data/gansun/1_2/노선·정류장 지표(노선별 차내 재차인원)_20220311.csv')
-data_11 = pd.read_csv('./data/gansun/1_2/노선·정류장 지표(노선별 차내 재차인원)_20220312.csv')
-data_12 = pd.read_csv('./data/gansun/1_2/노선·정류장 지표(노선별 차내 재차인원)_20220313.csv')
-data_13 = pd.read_csv('./data/gansun/1_2/노선·정류장 지표(노선별 차내 재차인원)_20220314.csv')
-data_14 = pd.read_csv('./data/gansun/1_2/노선·정류장 지표(노선별 차내 재차인원)_20220315.csv')
+data_1 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220305_간선345.csv')
+data_2 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220306_간선345.csv')
+data_3 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220307_간선345.csv')
+data_4 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220308_간선345.csv')
+data_5 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220309_간선345.csv')
+data_6 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220310_간선345.csv')
+data_7 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220311_간선345.csv')
+data_8 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220312_간선345.csv')
+data_9 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220313_간선345.csv')
+data_10 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220314_간선345.csv')
+data_11 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220315_간선345.csv')
+data_12 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220316_간선345.csv')
+data_13 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220317_간선345.csv')
+data_14 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220318_간선345.csv')
 
+print(data_1)
 #노선 번호 가져오기
-bus_num = data_1['노선'].unique()
+bus_num = data_1[data_1.columns.tolist()[0]].unique()
 
-day="02"
-date = '20220302'
+date = '20220305'
 last_date = str(int(date)+13)
 
 
@@ -88,6 +88,6 @@ for n in bus_num:
 
     
     #임시 date 생성
-    tmp_hour = pd.date_range("2022-03-02 04:00:00".format(day), periods=336, freq="H")
+    tmp_hour = pd.date_range("2022-03-05 04:00:00", periods=336, freq="H")
     result_df.index=pd.DatetimeIndex(tmp_hour)
     result_df.to_csv('{}.csv'.format(date+"_"+last_date+"_"+n))
