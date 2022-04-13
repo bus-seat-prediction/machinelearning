@@ -8,20 +8,20 @@ import pandas as pd
 #이거 필요없을듯?
 # bus_num =[100, 101, 102, 103, 104, 105, 106, 107, 109, 110, 110, 111, 120, 121, 130, 140, 141, 142, 143, 144, 145, 146, 147, 148, 150, 151, 152, 153, 160, 162, 171, 172, 173, 201, 202, 240, 241, 242, 260, 261, 262, 270, 271, 272, 273]
 
-data_1 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220305_간선345.csv')
-data_2 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220306_간선345.csv')
-data_3 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220307_간선345.csv')
-data_4 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220308_간선345.csv')
-data_5 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220309_간선345.csv')
-data_6 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220310_간선345.csv')
-data_7 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220311_간선345.csv')
-data_8 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220312_간선345.csv')
-data_9 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220313_간선345.csv')
-data_10 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220314_간선345.csv')
-data_11 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220315_간선345.csv')
-data_12 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220316_간선345.csv')
-data_13 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220317_간선345.csv')
-data_14 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220318_간선345.csv')
+data_1 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220305_간선67.csv')
+data_2 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220306_간선67.csv')
+data_3 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220307_간선67.csv')
+data_4 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220308_간선67.csv')
+data_5 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220309_간선67.csv')
+data_6 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220310_간선67.csv')
+data_7 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220311_간선67.csv')
+data_8 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220312_간선67.csv')
+data_9 = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220313_간선67.csv')
+data_a = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220314_간선67.csv')
+data_b = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220315_간선67.csv')
+data_c = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220316_간선67.csv')
+data_d = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220317_간선67.csv')
+data_e = pd.read_csv('./data/간선34567utf8/노선·정류장 지표(노선별 차내 재차인원)_20220318_간선67.csv')
 
 print(data_1)
 #노선 번호 가져오기
@@ -66,11 +66,11 @@ for n in bus_num:
     prepro_data_7 = preprocess_data(data_7, n)
     prepro_data_8 = preprocess_data(data_8, n)
     prepro_data_9 = preprocess_data(data_9, n)
-    prepro_data_10 = preprocess_data(data_10, n)
-    prepro_data_11 = preprocess_data(data_11, n)
-    prepro_data_12 = preprocess_data(data_12, n)
-    prepro_data_13 = preprocess_data(data_13, n)
-    prepro_data_14 = preprocess_data(data_14, n)
+    prepro_data_a = preprocess_data(data_a, n)
+    prepro_data_b = preprocess_data(data_b, n)
+    prepro_data_c = preprocess_data(data_c, n)
+    prepro_data_d = preprocess_data(data_d, n)
+    prepro_data_e = preprocess_data(data_e, n)
 
 
     result_df = pd.concat([prepro_data_1, prepro_data_2])
@@ -81,11 +81,11 @@ for n in bus_num:
     result_df = pd.concat([result_df, prepro_data_7])
     result_df = pd.concat([result_df, prepro_data_8])
     result_df = pd.concat([result_df, prepro_data_9])
-    result_df = pd.concat([result_df, prepro_data_10])
-    result_df = pd.concat([result_df, prepro_data_11])
-    result_df = pd.concat([result_df, prepro_data_12])
-    result_df = pd.concat([result_df, prepro_data_13])
-    result_df = pd.concat([result_df, prepro_data_14])
+    result_df = pd.concat([result_df, prepro_data_a])
+    result_df = pd.concat([result_df, prepro_data_b])
+    result_df = pd.concat([result_df, prepro_data_c])
+    result_df = pd.concat([result_df, prepro_data_d])
+    result_df = pd.concat([result_df, prepro_data_e])
 
 
     
